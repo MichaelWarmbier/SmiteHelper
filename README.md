@@ -1,5 +1,11 @@
 # Discord SmiteStats Bot
 
+- [Discord SmiteStats Bot](#discord-smitestats-bot)
+  * [Installation](#installation)
+  * [Important Information](#important-information)
+
+---
+
 **Version 1.0-beta-1**
 
 A bot which retrieves God and Item information from _Smite_ using its API and returns it directly to your server!
