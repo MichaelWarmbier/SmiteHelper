@@ -99,7 +99,7 @@ function createEmbedGod(jsonData) {
   currentGodEmbedAbility2.addField('Mana Cost', temp.cost, true);
   currentGodEmbedAbility2.addField('Cooldown', temp.cooldown, true);
 
-  temp = jsonData.Ability_1.Description.itemDescription;
+  temp = jsonData.Ability_3.Description.itemDescription;
   let currentGodEmbedAbility3 = new MessageEmbed()
   .setColor('#B5A672')
   .setTitle(jsonData.Ability_3.Summary)
@@ -110,7 +110,7 @@ function createEmbedGod(jsonData) {
   currentGodEmbedAbility3.addField('Mana Cost', temp.cost, true);
   currentGodEmbedAbility3.addField('Cooldown', temp.cooldown, true);
 
-  temp = jsonData.Ability_1.Description.itemDescription;
+  temp = jsonData.Ability_4.Description.itemDescription;
   let currentGodEmbedAbility4 = new MessageEmbed()
   .setColor('#B5A672')
   .setTitle(jsonData.Ability_4.Summary)
@@ -125,6 +125,7 @@ function createEmbedGod(jsonData) {
 }
 
 function createEmbedItem(jsonData) {
+  currentItemEmbed = new MessageEmbed();
   currentItemEmbed
 	.setTitle(jsonData.DeviceName)
 	.setDescription(jsonData.ItemDescription.SecondaryDescription)

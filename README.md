@@ -14,6 +14,13 @@ Created using the Discord.js library with Node.js, hosted on Replits _Always On_
 
 ![Example](Images/Example.png)
 
+## Commands
+
+###### _Assumes the default prefix._
+
+`?god <god_name>` returns basic god information and ability/passive information.<br>
+`?item <item_name>` returns item description and stats.
+
 ## Installation
 
 Add the bot to your server using [this link](https://discord.com/api/oauth2/authorize?client_id=952419748963033119&permissions=19456&scope=bot). 
