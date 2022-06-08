@@ -1,10 +1,15 @@
-// discord.js library
+// Libraries
 const { Client, Intents, MessageEmbed, MessageActionRow, MessageSelectMenu } = require("discord.js");
+const fs = require('fs');
+
+// Local JSON Files
 var jsonGodData = require('./JSON/gods.json'); 
 var jsonItemData = require('./JSON/items.json'); 
+var prefixStore = require('./JSON/PrefixStore.json');
 
 /*///// Data /////*/
-var prefix = '?';
+let prefix = null;
+const defaultPrefix = '?';
 const date = new Date();
 
 const colors = { // ANSI Colors
@@ -140,19 +145,23 @@ function createEmbedItem(jsonData) {
 
 /*///// Message Handling /////*/
 client.on("messageCreate", (message) => {
-
+  
   try {
 
+    if (Object.keys(prefixStore).includes(message.guild.id))
+      prefix = prefixStore[message.guild.id];
+    else prefix = defaultPrefix;
+    
     let timeStamp = 
       (date.getUTCMonth() + 1) + '/' + date.getUTCDate() + '/' + date.getUTCFullYear();
 
     if(message.author.bot || !message.content.startsWith(prefix)) return;
-
+    ////////////////////////////
     console.log(`${colors.Msg}Message sent from ${colors.Name}'${message.author.username}' ${colors.Msg}at ${timeStamp}:${colors.Str} "${message}" ${colors.End}`);
-  
+    ////////////////////////////
     if (message.content.startsWith(`${prefix}ping`))
       message.channel.send("SmiteStats Bot.\nCreate by Michael Warmbier.\nPing successful.");
-
+    ////////////////////////////
     if (message.content.startsWith(`${prefix}god `)) {
       args = message.content.split(`${prefix}god `);
       let [result, id] = findGod(args[1]);
@@ -161,7 +170,7 @@ client.on("messageCreate", (message) => {
         message.channel.send({ embeds: [embed[0], embed[1], embed[2], embed[3], embed[4], embed[5]] });
       }
     }
-
+    ////////////////////////////
     if (message.content.startsWith(`${prefix}item `)) {
       args = message.content.split(`${prefix}item `);
       let [result, id] = findItem(args[1]);
@@ -170,6 +179,28 @@ client.on("messageCreate", (message) => {
         message.channel.send({ embeds: [embed] });
       }
     }
+    ////////////////////////////
+    if (message.content.startsWith(`${prefix}prefix `)) {
+      if (message.member.permissions.has('MANAGE_GUILD')) {
+        args = message.content.split(`${prefix}prefix `);
+        if (args[1].length == 1) {
+          let newPrefix = args[1];
+          let guild = message.guild.id;
+          prefixStore[guild] = newPrefix;
+          prefixStore = JSON.stringify(prefixStore, null, 4);
+          fs.writeFile('./JSON/PrefixStore.json', prefixStore, err =>
+            { if (err) throw err; });
+        }
+        else {
+          message.channel.send('Prefix must be limited to one character.');
+        }
+      }
+      else {
+        message.channel.send('User is not the server owner.');
+        return;
+      }
+    }
+    
   }
   catch(err) { console.log(`Error: ${err} `)}
 });
