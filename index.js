@@ -22,7 +22,7 @@ const colors = { // ANSI Colors
 }
 
 const SmiteStatsLogo = 'https://github.com/MichaelWarmbier/michaelwarmbier.github.io/blob/master/Smite-Stats/assets/site/bolt.png?raw=true';
-const visitMessage = 'Make custom builds with SmiteStats -- SmiteBuildMaker.com\nInformation retrieve through the Smite API.';
+const visitMessage = 'Make custom builds with SmiteStats -- SmiteBuildMaker.com\nInformation retrieved through the Smite API.';
 
 var currentGodEmbed = new MessageEmbed().setColor('#B5A672').setFooter({ text: visitMessage, iconURL: SmiteStatsLogo });
 var currentItemEmbed = new MessageEmbed().setColor('#B5A672').setFooter({ text: visitMessage, iconURL: SmiteStatsLogo });;
@@ -66,7 +66,7 @@ function createEmbedGod(jsonData) {
   let temp = null;
   currentGodEmbed
   .setTitle(String(jsonData.Name))
-  .setURL(`https://michaelwarmbier.github.io/Smite-Stats/?Lg=${jsonData.id}&Ll=20&Li0=N&Li1=N&Li2=N&Li3=N&Li4=N&Li5=N&Lb=none&Lfb=none&Rg=N&Rl=1&Ri0=N&Ri1=N&Ri2=N&Ri3=N&Ri4=N&Ri5=N&Rb=none&Rfb=none`)
+  .setURL(`https://smitestats.kirbout.repl.co/?Lg=${jsonData.id}&Ll=20&Li0=N&Li1=N&Li2=N&Li3=N&Li4=N&Li5=N&Lb=none&Lfb=none&Rg=N&Rl=1&Ri0=N&Ri1=N&Ri2=N&Ri3=N&Ri4=N&Ri5=N&Rb=none&Rfb=none`)
 	.setDescription(jsonData.Title)
   .addField('Role', jsonData.Roles, true)
   .addField('Type', jsonData.Type, true)
