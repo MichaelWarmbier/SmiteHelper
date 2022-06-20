@@ -1,7 +1,7 @@
 # Discord SmiteStats Bot
 
 - [Discord SmiteStats Bot](#discord-smitestats-bot)
-  * [Installation](#installation)
+  * [Invitation](#invitation)
   * [Important Information](#important-information)
 
 ---
@@ -21,9 +21,9 @@ Created using the Discord.js library with Node.js, hosted on Replits _Always On_
 `?god <god_name>` returns basic god information and ability/passive information.<br>
 `?item <item_name>` returns item description and stats.
 
-## Installation
+## Invitation
 
-Add the bot to your server using [this link](https://discord.com/api/oauth2/authorize?client_id=952419748963033119&permissions=19456&scope=bot). 
+Invite the bot to your server using [this link](https://discord.com/api/oauth2/authorize?client_id=952419748963033119&permissions=19456&scope=bot). 
 
 ## Important Information
 
