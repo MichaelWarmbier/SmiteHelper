@@ -1,6 +1,6 @@
-# Discord SmiteStats Bot
+# SmiteHelper
 
-- [Discord SmiteStats Bot](#discord-smitestats-bot)
+- [SmiteHelper](#discord-smitestats-bot)
   * [Invitation](#invitation)
   * [Important Information](#important-information)
 
