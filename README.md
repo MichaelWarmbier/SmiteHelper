@@ -4,6 +4,8 @@
   * [Invitation](#invitation)
   * [Important Information](#important-information)
 
+**NOTE** This bot was made prior to the Discord update requiring all bots to use slash commands. As a result, it may no longer function.
+
 ---
 
 **Version 1.0-beta-1**
