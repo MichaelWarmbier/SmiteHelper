@@ -4,11 +4,9 @@
   * [Invitation](#invitation)
   * [Important Information](#important-information)
 
-**NOTE** This bot was made prior to the Discord update requiring all bots to use slash commands. As a result, it may no longer function.
+**NOTE** This bot was made prior to the Discord update requiring all bots to use slash commands. As a result, it may no longer function as intended.
 
 ---
-
-**Version 1.0-beta-1**
 
 A bot which retrieves God and Item information from _Smite_ using its API and returns it directly to your server!
 
